@@ -4,7 +4,7 @@
 import pytest
 
 from pypinyin import pinyin
-from ruby import pinyin_for_word, pinyin_for_phrase, print_rubys
+from ruby import pinyin_for_word, pinyin_for_phrase, print_rubys, parse_dictionary_line
 
 
 def test_tone_change_with_different_meaning():
@@ -21,3 +21,10 @@ def test_html_output():
     assert (
         print_rubys(u'我明白了。')
     ) == u'<ruby><rb>我</rb><rt>wǒ</rt><rb>明白</rb><rt>míngbái</rt><rb>了</rb><rt>le</rt><rb>。</rb><rt></rt></ruby>'
+
+
+def test_parse_dictionary_line():
+    line = u'我 我 [wo3] /I/me/my/'
+    character, meaning = parse_dictionary_line(line)
+    assert(character) == u'我'
+    assert(meaning) == [u'I', u'me', u'my']
