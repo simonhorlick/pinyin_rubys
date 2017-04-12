@@ -29,6 +29,9 @@ def build_deck():
  color: black;
  background-color: white;
 }
+.trans {}
+.entry { text-align: left; font-size: x-large; }
+.def { text-align: left; font-size: medium; }
 .reading {font-size: small;}
 .card1 { background-color: #FFFFFF; }
 .card2 { background-color: #FFFFFF; }""",
@@ -36,7 +39,7 @@ def build_deck():
 	    {
 		'name': 'Listening',
 		'qfmt': '{{Audio}}',
-		'afmt': '{{FrontSide}}<hr id=answer>{{Pinyin}}<br><div class=reading>{{Reading}}</div><br>{{Meaning}}',
+		'afmt': '{{Audio}}<hr id=answer>{{Pinyin}}<br><div class=reading>{{Reading}}</div><br>{{Meaning}}',
 	    },
 	    {
 		'name': 'Reading',
@@ -67,7 +70,9 @@ def build_deck():
  color: black;
  background-color: white;
 }
-
+.trans {}
+.entry { text-align: left; font-size: x-large; }
+.def { text-align: left; font-size: medium; }
 .card1 { background-color: #FFFFFF; }
 .card2 { background-color: #FFFFFF; }""",
 	templates=[
@@ -84,7 +89,7 @@ def build_deck():
 	    {
 		'name': 'Reading',
 		'qfmt': '{{Expression}}',
-		'afmt': '{{Pinyin}}<hr id=answer><br>{{Meaning}}<br>{{Audio}}',
+		'afmt': '{{Pinyin}}<br>{{Meaning}}<br>{{Audio}}',
 	    },
 	]
     )
@@ -123,7 +128,7 @@ def build_deck():
 
         # TODO(simon): Iterate these based on the model.
         Expression = cols[header['Expression']]
-        Meaning = cols[header['Meaning']]
+        Meaning = cols[header['Dictionary']]
         Reading = cols[header['Reading']]
         Audio = cols[header['Audio']]
         Image_URI = cols[header['Image_URI']]
