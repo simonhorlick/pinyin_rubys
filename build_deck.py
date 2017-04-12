@@ -44,7 +44,7 @@ def build_deck():
 	    {
 		'name': 'Reading',
 		'qfmt': '{{Expression}}',
-		'afmt': '{{FrontSide}}<hr id=answer>{{Pinyin}}<br><div class=reading>{{Reading}}</div><br>{{Meaning}}<br>{{Audio}}',
+		'afmt': '{{Pinyin}}<br><div class=reading>{{Reading}}</div><br>{{Meaning}}<br>{{Audio}}',
 	    },
 	]
     )
