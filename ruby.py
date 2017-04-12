@@ -41,7 +41,7 @@ def pinyin_for_word(word):
 
 def pinyin_for_phrase(phrase):
     # Segment the phrase into its constituent words.
-    words = [word for word in jieba.cut(phrase)]
+    words = [word for word in jieba.cut(phrase, HMM=False)]
 
     pinyin_words = [pinyin_for_word(word) for word in words]
 
