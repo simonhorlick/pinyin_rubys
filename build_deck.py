@@ -41,7 +41,7 @@ def build_deck():
 	    {
 		'name': 'Reading',
 		'qfmt': '{{Expression}}',
-		'afmt': '{{FrontSide}}<hr id=answer>{{Pinyin}}<br><div class=reading>{{Reading}}</div><br>{{Meaning}}',
+		'afmt': '{{FrontSide}}<hr id=answer>{{Pinyin}}<br><div class=reading>{{Reading}}</div><br>{{Meaning}}<br>{{Audio}}',
 	    },
 	]
     )
@@ -79,7 +79,7 @@ def build_deck():
 	    {
 		'name': 'Production',
 		'qfmt': '{{Pinyin}}<br>{{Audio}}',
-		'afmt': '{{FrontSide}}<hr id=answer>{{Meaning}}<br>{{Image_URI}}',
+		'afmt': '{{FrontSide}}<hr id=answer>{{Meaning}}<br>{{Audio}}<br>{{Image_URI}}',
 	    },
 	    {
 		'name': 'Reading',
