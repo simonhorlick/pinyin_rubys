@@ -34,7 +34,21 @@ def build_deck():
 .def { text-align: left; font-size: medium; }
 .reading {font-size: small;}
 .card1 { background-color: #FFFFFF; }
-.card2 { background-color: #FFFFFF; }""",
+.card2 { background-color: #FFFFFF; }
+
+/* Prevent copying of pinyin text. */
+rt {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+[data-pseudo-content]::after {
+     content: attr(data-pseudo-content);
+}
+""",
 	templates=[
 	    {
 		'name': 'Listening',
@@ -74,7 +88,21 @@ def build_deck():
 .entry { text-align: left; font-size: x-large; }
 .def { text-align: left; font-size: medium; }
 .card1 { background-color: #FFFFFF; }
-.card2 { background-color: #FFFFFF; }""",
+.card2 { background-color: #FFFFFF; }
+
+/* Prevent copying of pinyin text. */
+rt {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+[data-pseudo-content]::after {
+     content: attr(data-pseudo-content);
+}
+""",
 	templates=[
 	    {
 		'name': 'Listening',

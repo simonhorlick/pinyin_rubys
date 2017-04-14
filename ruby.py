@@ -4,6 +4,14 @@
 # A python script to segment chinese phrases and attach pinyin rubys. It can be
 # used to produce ruby-annotated phrases for use in html5 documents.
 #
+# As the pinyin rubys interleave with the chinese characters, it becomes
+# impossible to copy and paste only the chinese text. In order to support this
+# the pinyin is stored in a data-pseudo-content attribute and the following CSS
+# is required to properly render it:
+#   [data-pseudo-content]::after {
+#     content: attr(data-pseudo-content);
+#   }
+#
 
 import re
 import jieba
@@ -53,13 +61,13 @@ def pinyin_for_phrase(phrase):
 
 def print_ruby(x):
     character, pinyin = x
-    return u'<rb>%s</rb><rt>%s</rt>' % (character, pinyin)
+    return u'<rb>%s</rb><rt data-pseudo-content=%s></rt>' % (character, pinyin)
 
 
 def print_ruby_with_english(x, dictionary):
     character, pinyin = x
     meaning = dictionary.get(character, [u''])[0]
-    return u'<rb><ruby>%s</ruby></rb><rt class=eng>%s</rt>' % (print_ruby(x), meaning)
+    return u'<rb><ruby>%s</ruby></rb><rt class=eng data-pseudo-content="%s"></rt>' % (print_ruby(x), meaning)
 
 
 def print_rubys(phrase, dictionary=None):
